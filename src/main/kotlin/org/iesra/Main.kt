@@ -1,7 +1,7 @@
 package org.iesra
 
 import java.time.LocalDateTime
-
+import org.junit.platform.commons.logging.LoggerFactory
 
 // Ejercicio 4.7
 class Cuenta(val cuenta: Int, var saldo: Double)
@@ -96,9 +96,42 @@ class conjuntoTareas(var conjuntoTareas: ArrayList<Tarea>)
     }
 }
 
+// Ejercicio 4.10
+//class Tablero(val dimension: Int, val fichas: ArrayList<Ficha>)
+//{
+//    private val tablero = Array(dimension) { Array(dimension) { "O" } }
+//    private var started: Boolean = false
+//
+//    fun startGame()
+//    {
+//        started = true
+//        while (started) {
+//            val fichasA: Array<Ficha> = [Ficha(), Ficha(), Ficha()]
+//            val fichasB: Array<Ficha> = [Ficha(), Ficha(), Ficha()]
+//        }
+//    }
+//
+//    fun viewTablero()
+//    {
+//        for (i in 0..<tablero.size) {
+//            println(tablero[i])
+//        }
+//    }
+//}
+//
+//enum class Color { AZUL, ROJO }
+//class Ficha(color: Color)
+//{
+//
+//}
 
 
-fun main()
-{
+val logger = LoggerFactory.getLogger("Tarea")
 
+fun main() {
+    logger.trace("Mensaje TRACE")
+    logger.debug("Mensaje DEBUG")
+    logger.info("Mensaje INFO")
+    logger.warn("Mensaje WARN")
+    logger.error("Mensaje ERROR")
 }
