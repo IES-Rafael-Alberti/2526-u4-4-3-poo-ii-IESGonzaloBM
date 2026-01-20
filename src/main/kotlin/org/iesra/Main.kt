@@ -1,7 +1,62 @@
 package org.iesra
 
 import java.time.LocalDateTime
-import org.junit.platform.commons.logging.LoggerFactory
+import org.slf4j.LoggerFactory
+
+// Ejercicio 4.6
+/**
+ * Clase Compra
+ * @param cliente cliente que realizo la compra
+ * @param dia dia de la compra
+ * @param monto monto de la compra
+ * @constructor Crea una compra con cliente, dia y monto
+ */
+data class Compra(var cliente: Cliente, var dia: Int, var monto: Int)
+{
+
+}
+
+/**
+ * Clase Cliente
+ * @param nombre nombre del cliente
+ * @param domicilio domicilio del cliente
+ * @constructor Crea un cliente con nombre y domicilio
+ */
+data class Cliente(var nombre: String, var domicilio: Domicilio)
+{
+
+}
+
+
+/**
+ * Clase Domicilio
+ * @param calle calle del domicilio
+ * @param numero numero del domicilio
+ * @constructor Crea un domicilio con calle y numero
+ */
+data class Domicilio(var calle: String, var numero: Int)
+{
+    fun dirCompleta(): String
+    { return "Calle: $calle, num: $numero" }
+}
+
+/**
+ * Clase RepositorioCompras
+ * @constructor Crea un repositorio de compras
+ */
+data class RepositorioCompras()
+{
+    fun agregarCompra()
+    {
+
+    }
+
+    fun domicilios()
+    {
+
+    }
+}
+
 
 // Ejercicio 4.7
 class Cuenta(val cuenta: Int, var saldo: Double)
@@ -20,10 +75,7 @@ class Cuenta(val cuenta: Int, var saldo: Double)
 
     companion object {
         fun esMorosa(cuenta: Persona): Boolean
-        {
-            for (i in cuenta.cuentas) { if (i.saldo < 0) return true }
-            return false
-        }
+        { return cuenta.cuentas.any { (it.saldo ?: 0.0) < 0.0 } }
 
         fun transferencia(persona_origen: Persona, persona_destino: Persona, cuenta_origen: Int, cuenta_destino: Int, cantidad: Double): Boolean
         {
