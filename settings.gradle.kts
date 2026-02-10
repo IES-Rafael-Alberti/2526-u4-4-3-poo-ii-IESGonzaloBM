@@ -1,5 +1,5 @@
 plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version "0.8.0"
 }
-rootProject.name = "2425_PRO_P4.1-POO"
+rootProject.name = "2526-u5-5-2-a-5-2-b-herenciainterfaces-armas-IESGonzaloBM\n"
 
