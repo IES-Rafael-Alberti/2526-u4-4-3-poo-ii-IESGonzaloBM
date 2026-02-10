@@ -4,12 +4,12 @@ import kotlin.random.Random
 
 enum class RADIO { PEQUENO, AMPLIO }
 
-open class ArmaDeFuego(private var nombre: String,
-                  private var municion: Int,
-                  private var municionARestar: Int,
-                  private var tipoDeMunicion: String,
-                  private var danio: Int,
-                  private var radio: RADIO)
+open class ArmaDeFuego(protected var nombre: String,
+                       protected var municion: Int,
+                       protected var municionARestar: Int,
+                       protected var tipoDeMunicion: String,
+                       protected var danio: Int,
+                       protected var radio: RADIO)
 {
     fun estado(): String { return "$nombre(municion: $municion, municionARestar: $municionARestar, tipoDeMunicion: $tipoDeMunicion, danio: $danio, radio: $radio)" }
 
